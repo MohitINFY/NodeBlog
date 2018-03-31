@@ -23,5 +23,5 @@ test('Header has the correct State', async () => {
 test('Login works!', async () => {
     await page.click('.right a');
     const URL = await page.url();
-    expects(URL).toMatch(/accounts\.google\.com/);
+    expect(URL).toMatch(/accounts\.google\.com/);
 }, 30000)
