@@ -33,30 +33,17 @@ describe('when logged in', async () => {
        }) 
 
        test('submiting takes to User Screen', async ()=> {
+          await page.waitFor('h5');
           const text = page.getContentsOf('h5');
           expect(text).toEqual('Please confirm your entries');
        });
 
-       test('Final submit takes back to Index Screen', async ()=> {
-           await page.click('button.green');
-           await page.waitFor('.card');
-           const title = page.getContentsOf('.card-title');
-           console.log("title"+ JSON.stringify(title));
-           expect(title).toEqual('My title');
-       });
+    //    test('Final submit takes back to Index Screen', async ()=> {
+    //        await page.click('button.green');
+    //        await page.waitFor('.card');
+    //        const title = page.getContentsOf('.card-title');
+    //        console.log("title"+ JSON.stringify(title));
+    //        expect(title).toEqual('My title');
+    //    });
 
     })
-
-    describe('when login, test invalid inputs', async ()=> {
-        beforeEach(async ()=> {
-            await page.click('form button');
-        });
-
-        test('the form shows an Error message', async ()=> {
-          const titleError = await page.getContentsOf('.title .red-text');
-          const contentError = await page.getContentsOf('.content .red-text');
-          expect(titleError).toEqual('You must provide a value');
-          expect(contentError).toEqual('You must provide a value');
-        });
-    });
-})
