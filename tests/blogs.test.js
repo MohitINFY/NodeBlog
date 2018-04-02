@@ -11,9 +11,15 @@ afterEach(async () => {
     await page.close();
 });
 
-test('when logged in, can see create blog button', async () => {
-    await page.login();
-    await page.click('a.btn-floating');
-    const label = await page.getContentsOf('form label');
-    expect(label).toEqual('Blog Title');
-}, 30000)
+
+describe('when logged in', async () => {
+    beforeEach(async () => {
+       await page.login();
+       await page.click('a.btn-floating');
+    })
+
+    test('can see create blog button', async () => {
+        const label = await page.getContentsOf('form label');
+        expect(label).toEqual('Blog Title');
+    }, 30000)
+})
