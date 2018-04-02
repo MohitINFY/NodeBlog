@@ -36,14 +36,6 @@ describe('when logged in', async () => {
           await page.waitFor('h5');
           const text = page.getContentsOf('h5');
           expect(text).toEqual('Please confirm your entries');
-       });
-
-    //    test('Final submit takes back to Index Screen', async ()=> {
-    //        await page.click('button.green');
-    //        await page.waitFor('.card');
-    //        const title = page.getContentsOf('.card-title');
-    //        console.log("title"+ JSON.stringify(title));
-    //        expect(title).toEqual('My title');
-    //    });
-
+       })
     })
+})
