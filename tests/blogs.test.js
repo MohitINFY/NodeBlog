@@ -39,7 +39,7 @@ describe('when logged in', async () => {
 
        test('Final submit takes back to Index Screen', async ()=> {
            await page.click('button.green');
-           await this.page.waitFor('.card');
+           await page.waitFor('.card');
            const title = page.getContentsOf('.card-title');
            expect(title).toEqual('My title');
        });
