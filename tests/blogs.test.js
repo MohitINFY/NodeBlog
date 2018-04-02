@@ -31,11 +31,5 @@ describe('when logged in', async () => {
           await page.type('.content input', 'My Content');
           await page.click('form button');
        }) 
-
-       test('submiting takes to User Screen', async ()=> {
-          await page.waitFor('h5');
-          const text = page.getContentsOf('h5');
-          expect(text).toEqual('Please confirm your entries');
-       })
     })
 })
