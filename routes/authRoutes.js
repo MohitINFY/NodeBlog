@@ -16,9 +16,6 @@ module.exports = app => {
     }
   );
 
-  app.get('/', async (res, req) => {
-     res.send("Hi There!!");
-  })
 
   app.get('/auth/logout', (req, res) => {
     req.logout();
