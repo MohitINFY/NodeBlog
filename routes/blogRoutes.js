@@ -18,8 +18,9 @@ module.exports = app => {
   });
 
   app.get('/api/bloglist', async (req, res) => {
-    console.log("REQ"+'5ac1d9a5cb8cc82c8c7ed278');
-    const blogs = await Blog.find({ _user: '5ac1d9d4cb8cc82c8c7ed278' })
+    let user = "Test"
+    console.log(user);
+    const blogs = await Blog.find({ title: user })
     res.send(blogs);
   });
 
